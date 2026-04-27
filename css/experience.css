@@ -1,0 +1,465 @@
+/* ===========================
+   CSS Custom Properties
+   =========================== */
+:root {
+  --font:
+    Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  --blue: #2563eb;
+  --gray: #868e96;
+  --gray-light: #dee2e6;
+  --gray-bg: #f8f9fa;
+  --text: #212529;
+  --text-muted: #6c757d;
+  --link: #3c78d8;
+  --link-hover: #2558b0;
+  --white: #ffffff;
+  --border: #dee2e6;
+
+  --container-max: 860px;
+  --container-px: 24px;
+}
+
+/* ===========================
+   Site Header (고정)
+   =========================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--blue);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none !important;
+  transition: color 0.15s ease;
+  padding: 6px 0;
+}
+
+.header-nav:hover {
+  color: var(--blue);
+  text-decoration: none !important;
+}
+
+.header-nav-arrow {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.header-nav-label {
+  font-weight: 500;
+}
+
+.header-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--blue);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 헤더 높이만큼 본문 밀어내기 */
+body {
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--white);
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 52px;
+}
+
+/* ===========================
+   Container
+   =========================== */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+/* ===========================
+   Resume Section
+   =========================== */
+.resume-section {
+  margin-top: 48px;
+}
+
+.section-header {
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-body {
+  font-size: 0.95rem;
+}
+
+/* ===========================
+   Badge / Pill
+   =========================== */
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: transparent;
+  color: rgb(60, 120, 216);
+  border: 1px solid rgb(191, 219, 254);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.badge-primary {
+  background: #3c78d8;
+  color: #fff;
+}
+
+.badge-secondary {
+  background: var(--gray-bg);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.badge-success {
+  background: #d1e7dd;
+  color: #0a3622;
+  border: 1px solid #a3cfbb;
+}
+
+/* 회사 태그 배지 (서비스 채용 등) */
+.badge-tag {
+  background: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+}
+
+/* Skill Keyword 배지: 아웃라인 pill */
+.badge-kw {
+  background: transparent;
+  color: #3c78d8;
+  border: 1px solid #bfdbfe;
+  font-size: 0.78rem;
+  padding: 3px 11px;
+}
+
+.badge-muted {
+  background: var(--gray-bg);
+  color: #adb5bd;
+  border: 1px solid var(--border);
+}
+
+/* ===========================
+   EXPERIENCE — TOTAL 행
+   =========================== */
+.exp-total {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 6px;
+}
+
+.exp-total-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  width: 96px; /* 날짜 열 너비와 맞춤 */
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* ===========================
+   EXPERIENCE — 타임라인 엔트리
+   =========================== */
+.exp-entry {
+  display: flex;
+  gap: 0;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.exp-entry:last-child {
+  border-bottom: none;
+}
+
+/* 왼쪽: 날짜 열 */
+.exp-dates {
+  width: 96px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 16px;
+  padding-top: 2px;
+  gap: 2px;
+}
+
+.exp-dates span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* 오른쪽: 내용 */
+.exp-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 회사명 + 뱃지 행 */
+.exp-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.exp-dot {
+  font-size: 0.6rem;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.exp-company-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* 역할 블록 */
+.exp-role {
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.exp-role:last-child {
+  margin-bottom: 0;
+}
+
+.exp-role-name {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.exp-desc {
+  margin-bottom: 10px;
+}
+
+.exp-desc li {
+  font-size: 0.88rem;
+  color: var(--text);
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 4px;
+  line-height: 1.7;
+}
+
+.exp-desc li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+}
+
+/* Skill Keywords */
+.exp-skills {
+  margin-top: 10px;
+}
+
+.exp-skills-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+
+.exp-skills-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ===========================
+   SKILL 섹션
+   =========================== */
+.skill-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.skill-row + .skill-row {
+  border-top: 1px solid var(--border);
+}
+
+.skill-label {
+  width: 25%;
+  flex-shrink: 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gray);
+  text-align: right;
+  padding: 10px 16px 10px 0;
+}
+
+.skill-keywords {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 0;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.resume-footer {
+  margin-top: 50px;
+  padding-bottom: 32px;
+}
+
+.footer-text {
+  padding: 14px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-text a {
+  color: var(--text-muted);
+}
+
+.footer-text a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+/* ===========================
+   Responsive — Tablet (≤ 768px)
+   =========================== */
+@media (max-width: 768px) {
+  :root {
+    --container-px: 18px;
+  }
+
+  .exp-entry {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .exp-dates {
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  .exp-dates span + span::before {
+    content: "~";
+    margin: 0 4px;
+  }
+
+  .exp-total-label {
+    width: auto;
+    text-align: left;
+  }
+
+  .skill-label {
+    width: 100%;
+    text-align: left;
+    padding: 10px 0 2px;
+  }
+
+  .skill-keywords {
+    padding: 0 0 10px;
+  }
+
+  .skill-row {
+    flex-direction: column;
+  }
+}
+
+/* ===========================
+   Responsive — Mobile (≤ 480px)
+   =========================== */
+@media (max-width: 480px) {
+  :root {
+    --container-px: 14px;
+  }
+
+  .resume-section {
+    margin-top: 36px;
+  }
+
+  .section-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .exp-title-row {
+    gap: 6px;
+  }
+}
+
+/* ===========================
+   Print
+   =========================== */
+@media print {
+  a {
+    color: var(--text);
+  }
+  .resume-section {
+    page-break-inside: avoid;
+  }
+}

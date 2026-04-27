@@ -1,0 +1,824 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+
+/* ===========================
+   CSS Custom Properties
+   =========================== */
+:root {
+  --font:
+    Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  --blue: #2563eb;
+  --gray: #868e96;
+  --gray-light: #dee2e6;
+  --gray-bg: #f8f9fa;
+  --text: #212529;
+  --text-muted: #6c757d;
+  --link: #3c78d8;
+  --link-hover: #2558b0;
+  --white: #ffffff;
+  --border: #dee2e6;
+
+  --container-max: 860px;
+  --container-px: 24px;
+  --header-h: 52px;
+}
+
+/* ===========================
+   Site Header (고정)
+   =========================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--blue);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none !important;
+  transition: color 0.15s ease;
+  padding: 6px 0;
+}
+
+.header-nav:hover {
+  color: var(--blue);
+  text-decoration: none !important;
+}
+
+.header-nav-arrow {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.header-nav-label {
+  font-weight: 500;
+}
+
+/* 헤더 높이만큼 본문 밀어내기 */
+body {
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--white);
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 52px;
+}
+
+/* ===========================
+   Container
+   =========================== */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+/* ===========================
+   Projects Layout (좌우 분할)
+   =========================== */
+.projects-layout {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+  display: flex;
+  align-items: flex-start;
+  min-height: calc(100vh - var(--header-h));
+}
+
+/* ===== LEFT: 아이폰 목업 (sticky) ===== */
+.projects-mockup {
+  width: 400px;
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--header-h);
+  height: calc(100vh - var(--header-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockup-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.mockup-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 0.73rem;
+  font-weight: 500;
+  line-height: 1.55;
+  color: #991b1b;
+  background: #fef2f2;
+  border: 1.5px solid #fca5a5;
+  border-radius: 8px;
+  padding: 9px 12px;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.mockup-disclaimer svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #ef4444;
+}
+
+/* devices.css 크기 override */
+.device.device-iphone-14-pro {
+  zoom: 0.8;
+}
+
+/* ===== RIGHT: 프로젝트 설명 (스크롤) ===== */
+.projects-content {
+  flex: 1;
+  min-width: 0;
+  padding: 0 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ===== Project Section (snap unit) ===== */
+.project-section {
+  width: 100%;
+  min-height: calc(100vh - var(--header-h));
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  padding: 56px 0;
+  flex-shrink: 0;
+}
+
+.project-entry-inner {
+  max-width: 560px;
+}
+
+.project-number {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--blue);
+  background: #eff6ff;
+  border-radius: 999px;
+  padding: 2px 10px;
+  margin-bottom: 10px;
+}
+
+.project-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.project-period {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+.project-desc {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.project-points {
+  margin: 0 0 20px;
+  padding-left: 18px;
+  list-style: disc;
+}
+
+.project-points li {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.project-points li:last-child {
+  margin-bottom: 0;
+}
+
+.project-points a.point-link {
+  color: inherit;
+  text-decoration: none;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.project-points a.point-link:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.point-link-arrow {
+  font-size: 0.75rem;
+  margin-left: 4px;
+  opacity: 0.5;
+}
+
+/* ===== Detail Section ===== */
+.project-detail .project-entry-inner {
+  max-width: 560px;
+}
+
+.detail-back {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.detail-back a {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.detail-back a:hover {
+  color: var(--blue);
+}
+
+.detail-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+
+.detail-body {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--text);
+  min-height: 80px;
+}
+
+/* 기술 태그 */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--link);
+  background: transparent;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  padding: 3px 10px;
+  line-height: 1.4;
+}
+
+/* 링크 버튼 */
+.project-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--blue);
+  border: 1.5px solid var(--blue);
+  border-radius: 999px;
+  padding: 5px 16px;
+  text-decoration: none !important;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.project-link-btn:hover {
+  background: var(--link-hover);
+  border-color: var(--link-hover);
+  color: var(--white);
+  text-decoration: none !important;
+}
+
+.project-link-btn--outline {
+  background: transparent;
+  color: var(--blue);
+}
+
+.project-link-btn--outline:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* ===========================
+   Responsive — Tablet (≤ 900px)
+   =========================== */
+@media (max-width: 900px) {
+  .projects-mockup {
+    width: 220px;
+  }
+}
+
+/* ===========================
+   Responsive — Mobile (≤ 640px)
+   =========================== */
+@media (max-width: 640px) {
+  html {
+    scroll-snap-type: none;
+  }
+
+  .projects-layout {
+    flex-direction: column;
+  }
+
+  .projects-mockup {
+    width: 100%;
+    position: static;
+    height: auto;
+    padding: 32px 0 24px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .projects-content {
+    padding: 0;
+  }
+
+  .project-section {
+    min-height: auto;
+    scroll-snap-align: none;
+    padding: 40px 0;
+  }
+}
+
+/* ===========================
+   Responsive — Mobile (≤ 480px)
+   =========================== */
+@media (max-width: 480px) {
+  :root {
+    --container-px: 14px;
+  }
+}
+
+/* ===========================
+   Print
+   =========================== */
+@media print {
+  a {
+    color: var(--text);
+  }
+}
+
+/* ===========================
+   iOS Screen Base
+   =========================== */
+.ios-screen {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, "SF Pro Display", "Helvetica Neue", sans-serif;
+  border-radius: 49px;
+}
+
+/* ===========================
+   iOS Lock Screen
+   =========================== */
+.ios-lockscreen {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 30% 20%,
+      rgba(200, 40, 25, 0.75) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 70% 60%,
+      rgba(130, 18, 8, 0.65) 0%,
+      transparent 45%
+    ),
+    linear-gradient(170deg, #1a0404 0%, #0d0202 50%, #050000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+  transition:
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease;
+  cursor: grab;
+  user-select: none;
+}
+
+.ios-lockscreen.unlocking {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.ios-ls-statusbar {
+  width: 100%;
+  padding: 14px 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.ios-ls-time {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.ios-ls-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ios-ls-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ios-ls-lockicon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+
+.ios-ls-clock {
+  font-size: 72px;
+  font-weight: 200;
+  color: white;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.ios-ls-date {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+}
+
+.ios-ls-hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.ios-ls-bottom {
+  width: 100%;
+  padding: 0 28px 28px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ios-ls-bottom svg {
+  width: 26px;
+  height: 26px;
+  opacity: 0.7;
+}
+
+/* ===========================
+   iOS Home Screen
+   =========================== */
+
+.device-screen {
+  background-image: url("https://devicescss.xyz/assets/img/bg-iphone-14-pro.jpg");
+  border-radius: 49px;
+  height: 830px;
+  width: 390px;
+}
+
+.ios-homescreen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Status Bar */
+.ios-statusbar {
+  padding: 14px 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+}
+
+.ios-clock {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.3px;
+}
+
+.ios-statusbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Home body */
+.ios-home-body {
+  flex: 1;
+  padding: 30px 14px 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* App Grid */
+.ios-app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 0px;
+}
+
+.ios-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ios-app-icon {
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+  position: relative;
+}
+
+.logtrip-icon img {
+  width: 62px;
+  border-radius: 14px;
+  object-fit: fill;
+}
+
+.ios-app.tapped .ios-app-icon {
+  transform: scale(0.86);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ios-app--active .ios-app-icon {
+  box-shadow:
+    0 0 0 2.5px rgba(255, 255, 255, 0.9),
+    0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+.ios-app-label {
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  max-width: 58px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+/* Dock */
+.ios-dock {
+  margin: 0 14px 14px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-radius: 34px;
+  padding: 16px 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ===========================
+   iOS App Detail Screen
+   =========================== */
+.ios-appscreen {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  transform: scale(0.06);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.2s ease;
+  will-change: transform, opacity;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.ios-appscreen.open {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ios-appscreen-hero {
+  width: 100%;
+  height: 100%;
+}
+
+.ios-appscreen-back {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: white;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 10px 4px 8px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.ios-appscreen-back svg {
+  width: 8px;
+  height: 14px;
+}
+
+.ios-appscreen-hero-content {
+  width: 100%;
+  height: 100%;
+}
+
+.ios-appscreen-hero-content > iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.ios-proj-number {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-bottom: 6px;
+  letter-spacing: 0.08em;
+}
+
+.ios-proj-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 3px;
+  line-height: 1.25;
+}
+
+.ios-proj-period {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.ios-appscreen-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ios-proj-desc {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #3a3a3c;
+  margin: 0 0 14px;
+}
+
+.ios-proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+
+.ios-proj-tag {
+  font-size: 10px;
+  font-weight: 500;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  background: white;
+  border-radius: 999px;
+  padding: 2px 7px;
+}
+
+.ios-proj-cta {
+  display: block;
+  width: 100%;
+  padding: 11px;
+  background: #007aff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: center;
+}
+
+.ios-proj-cta:active {
+  background: #0056cc;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.resume-footer {
+  margin-top: 50px;
+  padding-bottom: 32px;
+}
+
+.footer-text {
+  padding: 14px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-text a {
+  color: var(--text-muted);
+}
+
+.footer-text a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+/* ===========================
+   Responsive — Tablet (≤ 768px)
+   =========================== */
+@media (max-width: 768px) {
+  :root {
+    --container-px: 18px;
+  }
+}

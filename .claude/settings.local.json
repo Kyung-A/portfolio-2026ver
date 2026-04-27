@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:resume.yowu.dev)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:assets.codepen.io)"
+    ]
+  }
+}

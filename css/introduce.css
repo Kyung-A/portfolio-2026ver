@@ -1,0 +1,279 @@
+/* ===========================
+   CSS Custom Properties
+   =========================== */
+:root {
+  --font:
+    Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-sign: "Parisienne", cursive;
+
+  --blue: #2563eb;
+  --gray-light: #dee2e6;
+  --gray-bg: #f8f9fa;
+  --text: #212529;
+  --text-muted: #6c757d;
+  --link: #3c78d8;
+  --link-hover: #2558b0;
+  --white: #ffffff;
+  --border: #dee2e6;
+
+  --container-max: 860px;
+  --container-px: 24px;
+  --header-h: 52px;
+}
+
+/* ===========================
+   Body
+   =========================== */
+body {
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--white);
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--header-h);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===========================
+   Container
+   =========================== */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+/* ===========================
+   고정 헤더
+   =========================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none !important;
+  transition: color 0.15s ease;
+  padding: 6px 0;
+}
+
+.header-nav:hover {
+  color: var(--blue);
+  text-decoration: none !important;
+}
+
+.header-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--blue);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-nav-arrow {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+/* ===========================
+   Resume Section
+   =========================== */
+.resume-section {
+  margin-top: 48px;
+}
+
+/* ===========================
+   INTRODUCE 레이아웃
+   (좌: 레이블 / 우: 본문 — 이미지 참조)
+   =========================== */
+
+.section-header {
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.introduce-layout {
+  display: flex;
+  gap: 0;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+/* 왼쪽 레이블 열 */
+.introduce-label {
+  width: 120px;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  text-align: right;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  line-height: 1.8;
+  border-bottom: 1px solid var(--text);
+}
+
+/* 오른쪽 본문 열 */
+.introduce-content {
+  flex: 1;
+  min-width: 0;
+  padding-left: 24px;
+}
+
+.introduce-content p {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+
+.introduce-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.resume-footer {
+  margin-top: 64px;
+  padding-bottom: 32px;
+}
+
+.footer-text {
+  padding: 14px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-text a {
+  color: var(--text-muted);
+}
+.footer-text a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+/* ===========================
+   Responsive — Tablet (≤ 768px)
+   =========================== */
+@media (max-width: 768px) {
+  :root {
+    --container-px: 18px;
+  }
+
+  .introduce-layout {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 70px;
+  }
+
+  .introduce-label {
+    width: auto;
+    text-align: left;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  .introduce-content {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 16px;
+  }
+}
+
+/* ===========================
+   Responsive — Mobile (≤ 480px)
+   =========================== */
+@media (max-width: 480px) {
+  :root {
+    --container-px: 14px;
+  }
+
+  .resume-section {
+    margin-top: 40px;
+  }
+
+  .section-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .introduce-content p {
+    font-size: 0.9rem;
+  }
+
+  .introduce-sign {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===========================
+   Print
+   =========================== */
+@media print {
+  .site-header {
+    display: none;
+  }
+  body {
+    padding-top: 0;
+  }
+  a {
+    color: var(--text);
+  }
+}

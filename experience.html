@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>남은경 — Portfolio</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/experience.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Parisienne&display=swap&subset=korean"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+</head>
+
+<body>
+    <!-- 고정 헤더 -->
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="index.html" class="header-nav header-nav--left">
+                <span class="header-nav-arrow">←</span>
+                <span class="header-nav-label">홈</span>
+            </a>
+            <span class="header-title">EXPERIENCE</span>
+            <a href="introduce.html" class="header-nav header-nav--right">
+                <span class="header-nav-label">자기소개</span>
+                <span class="header-nav-arrow">→</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- ===== EXPERIENCE ===== -->
+        <section class="resume-section" id="experience">
+            <div class="section-header">
+                <h2>EXPERIENCE</h2>
+            </div>
+            <div class="section-body">
+                <!-- TOTAL 행 -->
+                <div class="exp-total">
+                    <span class="exp-total-label">TOTAL</span>
+                    <span class="badge badge-secondary">총 4년</span>
+                </div>
+
+                <!-- 회사 1: HL7 -->
+                <div class="exp-entry">
+                    <div class="exp-dates">
+                        <span>2024.11 ~</span>
+                        <span>2025.08</span>
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-title-row">
+                            <h3 class="exp-company-name">HL7(휴비츠레이어세븐)</h3>
+                            <span class="badge badge-secondary">10개월</span>
+                        </div>
+
+                        <div class="exp-role">
+                            <p class="exp-role-name">프로덕트 엔지니어 · 2024.11 ~ 2025.08</p>
+                            <ul class="exp-desc">
+                                <li><strong>[대리점 관리 시스템 전면 리뉴얼 및 정상화]</strong> 런타임 에러·데이터 부정합으로 타 부서가 사용 거부하던 레거시를 3개월
+                                    만에 전면 안정화. 타 부서 도입률 0% → 98% 달성</li>
+                                <li>중복 API 호출 통합 및 불필요 코드 제거로 렌더링 성능 최적화; Figma로 구두 요구사항 시각화 및 API 명세·화면 기획서 자산화</li>
+                                <li><strong>[개발 문화 및 인프라 현대화]</strong> 로컬 복사 방식 협업 → Git Flow 전환; AWS OIDC·GitHub
+                                    Actions CI/CD 자동화로 빌드 속도 약 50% 단축, 문서화 체계(Notion) 도입</li>
+                                <li><strong>[글로벌 파트너십 관리 시스템 구축]</strong> 다국어(한/영) 신규 글로벌 프로젝트 프론트엔드 설계 및 개발. Next.js
+                                    SSR + Lingui.js 도입으로 다국어 리소스 관리 공수 절감</li>
+                            </ul>
+                            <div class="exp-skills">
+                                <span class="exp-skills-label">Skill Keywords</span>
+                                <div class="exp-skills-badges">
+                                    <span class="badge badge-kw">React</span>
+                                    <span class="badge badge-kw">Next.js</span>
+                                    <span class="badge badge-kw">TypeScript</span>
+                                    <span class="badge badge-kw">Lingui.js</span>
+                                    <span class="badge badge-kw">AWS OIDC</span>
+                                    <span class="badge badge-kw">GitHub Actions</span>
+                                    <span class="badge badge-kw">Figma</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 회사 2: 멋쟁이사자처럼 -->
+                <div class="exp-entry">
+                    <div class="exp-dates">
+                        <span>2022.03 ~</span>
+                        <span>2024.01</span>
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-title-row">
+                            <h3 class="exp-company-name">멋쟁이사자처럼</h3>
+                            <span class="badge badge-secondary">1년 11개월</span>
+                        </div>
+
+                        <div class="exp-role">
+                            <p class="exp-role-name">프론트엔드 개발자 · 2022.03 ~ 2024.01</p>
+                            <ul class="exp-desc">
+                                <li><strong>[LMS 및 백오피스 운영 자동화]</strong> 신규 부트캠프 개설 시 수동 코드 배포 → 운영 자동화 시스템으로 전환. 신규 과정
+                                    배포 공수 Zero화, 운영팀 독립 운영 지원</li>
+                                <li>react-hook-form 기반 동적 폼 빌더 및 다단계 전형 관리 시스템(Step-by-step) 구현으로 지원자 관리 효율화</li>
+                                <li><strong>[지원 프로세스 UX 최적화]</strong> Redux 전역 상태 관리·Selector 최적화로 대규모 폼 리렌더링 방지;
+                                    Redux-Thunk 중간 저장으로 데이터 정합성 확보 → 지원서 제출 완료 전환율 개선</li>
+                                <li><strong>[데이터 중심 프로덕트 개선]</strong> 마케팅팀과 GTM 행동 퍼널 태깅 설계로 이탈 지점 추적 환경 구축; A/B 테스트 주도;
+                                    CS 데이터 기반 캘린더 UI 도입</li>
+                            </ul>
+                            <div class="exp-skills">
+                                <span class="exp-skills-label">Skill Keywords</span>
+                                <div class="exp-skills-badges">
+                                    <span class="badge badge-kw">React</span>
+                                    <span class="badge badge-kw">TypeScript</span>
+                                    <span class="badge badge-kw">Redux</span>
+                                    <span class="badge badge-kw">Redux-Thunk</span>
+                                    <span class="badge badge-kw">react-hook-form</span>
+                                    <span class="badge badge-kw">GTM</span>
+                                    <span class="badge badge-kw">GA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 회사 3: 피타그래프 -->
+                <div class="exp-entry">
+                    <div class="exp-dates">
+                        <span>2020.11 ~</span>
+                        <span>2022.02</span>
+                    </div>
+                    <div class="exp-content">
+                        <div class="exp-title-row">
+                            <h3 class="exp-company-name">피타그래프</h3>
+                            <span class="badge badge-secondary">1년 3개월</span>
+                        </div>
+
+                        <div class="exp-role">
+                            <p class="exp-role-name">웹퍼블리셔 · 2020.11 ~ 2022.02</p>
+                            <ul class="exp-desc">
+                                <li><strong>[공공기관 지도 기반 플랫폼 UI 구축]</strong> 웹 표준 및 접근성 준수, 동작구 빅데이터 플랫폼(스마트 상권분석·지도)
+                                    퍼블리싱 담당</li>
+                                <li><strong>[데이터 시각화 UI 구현]</strong> 차트 및 지도 API 활용 대시보드 인터페이스 구현으로 복잡한 데이터 직관적 시각화</li>
+                            </ul>
+                            <div class="exp-skills">
+                                <span class="exp-skills-label">Skill Keywords</span>
+                                <div class="exp-skills-badges">
+                                    <span class="badge badge-kw">HTML/CSS</span>
+                                    <span class="badge badge-kw">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SKILL ===== -->
+        <section class="resume-section" id="skill">
+            <div class="section-header">
+                <h2>SKILL</h2>
+            </div>
+            <div class="section-body">
+
+                <div class="skill-row">
+                    <div class="skill-label">Front-End</div>
+                    <div class="skill-keywords">
+                        <span class="badge badge-primary">React</span>
+                        <span class="badge badge-primary">Next.js</span>
+                        <span class="badge badge-primary">TypeScript</span>
+                        <span class="badge badge-primary">React Native</span>
+                        <span class="badge badge-primary">React-Query</span>
+                        <span class="badge badge-primary">Tailwind CSS</span>
+                        <span class="badge">Remix.js</span>
+                        <span class="badge">Redux</span>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <div class="skill-label">Back-End & Database</div>
+                    <div class="skill-keywords">
+                        <span class="badge badge-primary">Node.js</span>
+                        <span class="badge badge-primary">Supabase</span>
+                        <span class="badge">Nest.js</span>
+                        <span class="badge">Prisma</span>
+                        <span class="badge">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <div class="skill-label">DevOps & Tools</div>
+                    <div class="skill-keywords">
+                        <span class="badge badge-primary">GitHub Actions</span>
+                        <span class="badge">Vercel</span>
+                        <span class="badge">pnpm Workspace</span>
+                        <span class="badge">AWS EC2/OIDC</span>
+                        <span class="badge">Figma</span>
+                        <span class="badge">GA/GTM</span>
+                        <span class="badge">Docker</span>
+                        <span class="badge">Jenkins</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="resume-footer">
+            <div class="footer-text">
+                <p>v1.0.0 / <a href="https://github.com/Kyung-A" target="_blank" rel="noopener">Github</a></p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
