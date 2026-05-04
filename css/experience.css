@@ -219,7 +219,7 @@ body {
 .exp-entry {
   display: flex;
   gap: 0;
-  padding: 24px 0;
+  padding: 32px 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -287,27 +287,70 @@ body {
   font-size: 0.88rem;
   color: var(--text-muted);
   font-style: italic;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .exp-desc {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.exp-desc li {
+.exp-desc > li {
+  font-size: 0.92rem;
+  color: var(--text);
+  padding-left: 0;
+  position: relative;
+  margin-bottom: 16px;
+  line-height: 1.65;
+}
+
+.exp-desc > li:last-child {
+  margin-bottom: 0;
+}
+
+.exp-desc > li > strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.exp-desc ul {
+  margin-top: 4px;
+  padding-left: 4px;
+}
+
+.exp-desc ul li {
   font-size: 0.88rem;
   color: var(--text);
   padding-left: 14px;
   position: relative;
-  margin-bottom: 4px;
-  line-height: 1.7;
+  margin-bottom: 5px;
+  line-height: 1.65;
 }
 
-.exp-desc li::before {
+.exp-desc ul li:last-child {
+  margin-bottom: 0;
+}
+
+.exp-desc ul li::before {
   content: "•";
   position: absolute;
   left: 0;
   color: var(--text-muted);
+}
+
+.exp-desc ul li strong {
+  color: var(--blue);
+  font-weight: 600;
+  margin-right: 2px;
+}
+
+.exp-desc > li > p {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin: 4px 0 6px;
 }
 
 /* Skill Keywords */
